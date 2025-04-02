@@ -48,12 +48,13 @@ app.post("/api/todos", async (req, res) => {
 // Delete a todo
 app.delete("/api/todos/:id", async (req, res) => {
   try {
-    await Todo.findByIdAndDelete(req.params.id); // ✅ Fixed this line
-    res.status(200).json({ message: "Todo Deleted" });
+      await Todo.findByIdAndDelete(req.params.id);
+      res.status(200).json({ success: true }); // ✅ Minimize response
   } catch (err) {
-    res.status(500).json({ error: err.message });
+      res.status(500).json({ error: err.message });
   }
 });
+
 
 // Start server
 const PORT = process.env.PORT || 5000;
