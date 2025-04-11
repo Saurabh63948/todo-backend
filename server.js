@@ -10,7 +10,11 @@ const server = http.createServer(app); // HTTP server create kiya
 
 const io = new Server(server, {
   cors: {
-    origin: ["http://localhost:5173"], // ✅ Frontend ka sahi port (Vite)
+    origin: [
+      "http://localhost:5173",
+      "https://todo-app-orpin-sigma-23.vercel.app"
+    ],
+    // ✅ Frontend ka sahi port (Vite)
     methods: ["GET", "POST"],
   },
 });
