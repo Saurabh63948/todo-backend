@@ -14,7 +14,6 @@ const io = new Server(server, {
       "http://localhost:5173",
       "https://todo-app-orpin-sigma-23.vercel.app"
     ],
-    // ✅ Frontend ka sahi port (Vite)
     methods: ["GET", "POST"],
   },
 });
@@ -85,7 +84,7 @@ io.on("connection", (socket) => {
   console.log("⚡ New User Connected:", socket.id);
 
   socket.on("sendMessage", (message) => {
-    io.emit("receiveMessage", message); // ✅ Broadcast message to all users
+    socket.broadcast.emit("receiveMessage", message); // ✅ Send to all except sender
   });
 
   socket.on("disconnect", () => {
