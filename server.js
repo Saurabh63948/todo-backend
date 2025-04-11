@@ -12,7 +12,7 @@ const io = new Server(server, {
   cors: {
     origin: [
       "http://localhost:5173",
-      "https://todo-app-orpin-sigma-23.vercel.app"
+      "https://todo-app-mlw5-git-main-saurabh-singhs-projects-98b1377c.vercel.app"
     ],
     methods: ["GET", "POST"],
   },
